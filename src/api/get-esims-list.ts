@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_BASE_URL } from './consts';
+import { API_BASE_URL } from '../../consts';
 
 export async function getSimsList(accessToken: string) {
   let response;

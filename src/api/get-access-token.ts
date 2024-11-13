@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_BASE_URL } from './consts';
+import { API_BASE_URL } from '../../consts';
 
 export async function getAccessToken(client_Id: string, client_secret: string) {
   let access_token;

@@ -1,16 +1,15 @@
 import { test, expect } from '@playwright/test';
-import { authConstants } from './consts';
-import { getAccessToken } from './get-access-token';
-import { getSimsList } from './get-esims-list';
-import { postOrder } from './post-submit-order';
+import { getAccessToken } from '../../src/api/get-access-token';
+import { getSimsList } from '../../src/api/get-esims-list';
+import { postOrder } from '../../src/api/post-submit-order';
 
 test.describe('ESim order list', () => {
   let token: string;
 
   test.beforeAll(async () => {
     token = await getAccessToken(
-      authConstants.client_id,
-      authConstants.client_secret
+      process.env.CLIENT_ID as string,
+      process.env.CLIENT_SECRET as string,
     );
   });
 

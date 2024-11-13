@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_BASE_URL } from './consts';
+import { API_BASE_URL } from '../../consts';
 
 type OrderRequestBody = {
   quantity: string;

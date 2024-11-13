@@ -28,8 +28,10 @@ export abstract class BasePage {
       return;
     } else {
       await this.acceptCookiesBttn().click();
-      await this.pushNotificationsBanner().isVisible();
-      // await this.pushNotificationsDontAllow().click();
+
+      if(await this.pushNotificationsBanner().isVisible()){
+        await this.pushNotificationsDontAllow().click()
+      }
     }
   }
 }

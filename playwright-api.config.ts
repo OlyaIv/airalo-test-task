@@ -1,5 +1,5 @@
 import { defineConfig } from '@playwright/test';
-import { API_BASE_URL } from './tests/api-tests/consts';
+import { API_BASE_URL } from './consts';
 
 
 const BASE_URL_API = API_BASE_URL;
