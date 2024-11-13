@@ -20,6 +20,7 @@ For security reasons, I'm not putting `client_id` and `client_secret` into publi
 
 # ui-task
 
+- UI test is build on page object model. Page implementation is localed in `./src/pages` and search component is in `./src/components`
 - Test configuration for UI tests is located in `playwright.config.ts`
 
 ### How to Run UI Test
