@@ -29,7 +29,7 @@ export abstract class BasePage {
     } else {
       await this.acceptCookiesBttn().click();
       await this.pushNotificationsBanner().isVisible();
-      await this.pushNotificationsDontAllow().click();
+      // await this.pushNotificationsDontAllow().click();
     }
   }
 }
