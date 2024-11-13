@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import * as dotenv from 'dotenv'
+import * as dotenv from 'dotenv';
 
 dotenv.config();
 const baseUrl = process.env.BASE_URL;
@@ -34,7 +34,7 @@ export default defineConfig({
     headless: false,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',
-    testIdAttribute: 'data-testid'
+    testIdAttribute: 'data-testid',
   },
 
   projects: [

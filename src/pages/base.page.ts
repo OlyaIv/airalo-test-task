@@ -7,29 +7,29 @@ export abstract class BasePage {
     this.page = page;
   }
 
-  cookieBanner(): Locator{
-    return this.page.locator('#onetrust-group-container')
+  cookieBanner(): Locator {
+    return this.page.locator('#onetrust-group-container');
   }
 
   acceptCookiesBttn(): Locator {
     return this.page.locator('#onetrust-accept-btn-handler');
   }
 
-  pushNotificationsDontAllow(): Locator{
+  pushNotificationsDontAllow(): Locator {
     return this.page.locator('#wzrk-cancel');
   }
 
-  pushNotificationsBanner(): Locator{
+  pushNotificationsBanner(): Locator {
     return this.page.locator('.wzrk-alert wiz-show-animate');
   }
 
-  async acceptCookies(){
-    if(!this.cookieBanner()){
-      return
+  async acceptCookies() {
+    if (!this.cookieBanner()) {
+      return;
     } else {
-      await this.acceptCookiesBttn().click()
-      await this.pushNotificationsBanner().isVisible()
-      await this.pushNotificationsDontAllow().click()
+      await this.acceptCookiesBttn().click();
+      await this.pushNotificationsBanner().isVisible();
+      await this.pushNotificationsDontAllow().click();
     }
   }
 }
