@@ -6,10 +6,20 @@ export class ProductsPage extends BasePage {
     super(page);
   }
 
+  buyNowBttn() {
+    return this.page.locator('.package-list-wrapper [data-testid="esim-button"]');
+  }
+
   firstBuyNowBttn() {
-    return this.page
-      .locator('.package-list-wrapper [data-testid="esim-button"]')
-      .first();
+    return this.buyNowBttn().first();
+  }
+
+  secondBuyNowBttn(){
+    return this.buyNowBttn().nth(1);
+  }
+
+  async selectSecondeESimElement() {
+    await this.secondBuyNowBttn().click();
   }
 
   async selectFirstESimElement() {

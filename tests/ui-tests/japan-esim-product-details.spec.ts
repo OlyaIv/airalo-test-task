@@ -30,7 +30,7 @@ test.describe('Japan e-Sim details', () => {
     await landingPage.populateSearch(japan);
     await landingPage.clickResults(japan);
 
-    await productsPage.selectFirstESimElement();
+    await productsPage.selectSecondeESimElement();
 
     const actualProductData = {
       title: await productDetailsPage.getTitleValue(),

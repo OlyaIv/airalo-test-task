@@ -1,0 +1,40 @@
+# This file tells GitHub Actions what triggers the workflow, the environment it runs in, and the steps to execute your E2E tests.
+
+name: Run UI Tests # The name appears in the Actions tab of your GitHub repository.
+
+# Defines the events that trigger the workflow
+on: 
+  push:
+    branches:
+      - main # Run the workflow when code is pushed to the main branch
+  pull_request: 
+    branches:
+      - main # Run the workflow when a pull request is targeting or main branch
+# You can add other triggers like schedule or workflow_dispatch for manual runs
+
+# Workflows consist of one or more jobs, each with its own tasks. Jobs can run sequentially or in paralle
+  jobs:   # Defines individual jobs in the workflow
+    e2e-tests:
+      runs-on: ubuntu-latest # the runner environment. A Linux runner provided by GitHub. Alternatives: windows-latest or macos-latest (depending on your requirements).
+
+      steps:
+        # Step 1: Checkout the repository. Clones your repository into the runner, so it has access to your code
+        - name: Checkout code
+          uses: actions/checkout@v2
+
+        # Step 2: Set up Node.js environment
+        - name: Setup Node.js
+          uses: actions/setup-node@v2
+          with:
+            node-version: '14' # Use the Node.js version required by your project
+        
+        # Step 3: Install dependencies. Installs your project dependencies from package.json
+        - name: Install dependencies
+          run: npm install
+
+        # Step 4: Run E2E tests
+        - name: Run tests
+          run: npm run test:e2e
+          env:
+            CLIENT_ID: ${{ secrets.CLIENT_ID }}
+            CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
