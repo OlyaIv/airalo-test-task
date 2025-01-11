@@ -30,19 +30,12 @@
     "dotenv": "16.4.5"
   },
   "lint-staged": {
-    "*.js": [
+    "*.{js,ts,tsx}": [
       "eslint --fix",
       "prettier --write"
     ],
-    "*.ts": [
-      "eslint --fix",
+    "*.{json,css,scss,html,md}": [
       "prettier --write"
-
-    ],
-    "*.tsx": [
-      "eslint --fix",
-      "prettier --write"
-
     ]
   }
 }
