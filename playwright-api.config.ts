@@ -1,8 +1,6 @@
 import { defineConfig } from '@playwright/test';
 import { API_BASE_URL } from './consts';
 
-
-const BASE_URL_API = API_BASE_URL;
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -29,7 +27,7 @@ export default defineConfig({
   reporter: 'list',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    baseURL: BASE_URL_API,
+    baseURL: API_BASE_URL,
     headless: true,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',

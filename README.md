@@ -12,8 +12,10 @@ Test calls two endpoints: it sends POST request to create an order, and retrieve
 
 Install Dependencies `npm install`
 
+Populate `CLIENT_ID` and `CLIENT_SECRET` values in .env file
+
 Run with commant 
-`CLIENT_ID="<client_id>" CLIENT_SECRET="<client_secret>" npm run test:api`
+`npm run test:api`
 
 For security reasons, I'm not putting `client_id` and `client_secret` into public access, these values are retrieved from environmetal variables. Populate `client_id` and `client_secret` and run the command.
 
