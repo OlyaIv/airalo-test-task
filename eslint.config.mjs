@@ -19,14 +19,6 @@ export default [
     // Enforce 2 spaces for indentation
     'yml/indent': ['error', 2],
 
-    // Require a newline at the end of the file
-    'yml/eol-last': ['error', 'always'],
-
-    // Prohibit trailing spaces
-    'yml/no-trailing-blank-lines': ['error'],
-
-    // Enforce consistency in key ordering
-    'yml/sort-keys': ['off'] // Optional: set to 'error' if you want this
   }},
   {languageOptions: { globals: globals.browser }},
   pluginJs.configs.recommended,

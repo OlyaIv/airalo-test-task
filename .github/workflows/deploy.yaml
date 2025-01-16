@@ -1,13 +1,12 @@
-name: test API 
+name: test API
 on: [push, workflow-dispatch]
-jobs: 
-  test: 
+jobs:
+  test:
   runs-on: ubuntu-latest
-  steps: 
-    -name: Get code
+  steps:
+    - name: Get code
       uses: actions/checkout@v3
-    -name: Install dependencies
+    - name: Install dependencies
       run: npm ci
-    -name: run API tests
+    - name: run API tests
       run: npm test:api
-  
