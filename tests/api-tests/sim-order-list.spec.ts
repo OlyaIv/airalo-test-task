@@ -2,15 +2,13 @@ import { test, expect } from '@playwright/test'
 import { getAccessToken } from '../../src/api/get-access-token'
 import { getSimsList } from '../../src/api/get-esims-list'
 import { postOrder } from '../../src/api/post-submit-order'
+import { CLIENT_ID, CLIENT_SECRET } from '../../consts'
 
 test.describe('ESim order list', () => {
   let token: string
 
   test.beforeAll(async () => {
-    token = await getAccessToken(
-      process.env.CLIENT_ID as string,
-      process.env.CLIENT_SECRET as string
-    )
+    token = await getAccessToken(CLIENT_ID as string, CLIENT_SECRET as string)
   })
 
   test('Post order for eSIm and check its retrieved from orders list', async () => {

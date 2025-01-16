@@ -1,13 +1,14 @@
 name: test API
 on: 
   push:
-  workflow_dispatch: # Corrected from workflow-dispatch
+  workflow_dispatch:
 jobs:
   test:
     runs-on: ubuntu-latest
     env:
       CLIENT_ID: ${{ secrets.CLIENT_ID }}
       CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+      API_BASE_URL: https://sandbox-partners-api.airalo.com
     steps:
       - name: Get code
         uses: actions/checkout@v3
