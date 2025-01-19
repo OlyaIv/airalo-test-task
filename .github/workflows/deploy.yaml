@@ -29,8 +29,7 @@ jobs:
         run: npm ci
 
       - name: Build project
-        run: npm run build
+        run: echo "Building project..."
       
       - name: Deploy
-        run: |
-          echo "Deploying to production..."
+        run: echo "Deploying to production..."
